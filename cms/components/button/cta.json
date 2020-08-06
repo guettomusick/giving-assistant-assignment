@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_button_ctas",
+  "info": {
+    "name": "CTA",
+    "icon": "external-link-alt"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

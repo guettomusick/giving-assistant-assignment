@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coupons",
+  "info": {
+    "name": "Coupon"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Hero": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Code": {
+      "type": "string",
+      "required": true
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "button.cta",
+      "required": true
+    }
+  }
+}
