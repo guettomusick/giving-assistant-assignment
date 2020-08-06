@@ -8,7 +8,7 @@ const StyledModal = styled(Modal)`
   flex-direction: row;
   overflow: hidden;
 
-  @media(max-width: 768px) {
+  @media(max-width: 640px) {
     flex-direction: column;
     overflow: auto;
   }
@@ -16,7 +16,10 @@ const StyledModal = styled(Modal)`
 
 const SplitPane = styled.div`
   flex-grow: 1;
-  padding: 40px;
+  width: 50%;
+  @media(max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const LeftSplitPane = styled(SplitPane)`
@@ -36,14 +39,11 @@ const SplitModal: FC<Props> = ({
   left,
   right,
   ...props
-}) => {
-
-  return (
-    <StyledModal { ...props }>
-      <LeftSplitPane>{ left }</LeftSplitPane>
-      <RightSplitPane>{ right }</RightSplitPane>
-    </StyledModal>
-  )
-};
+}) => (
+  <StyledModal { ...props }>
+    <LeftSplitPane>{ left }</LeftSplitPane>
+    <RightSplitPane>{ right }</RightSplitPane>
+  </StyledModal>
+);
 
 export default SplitModal;

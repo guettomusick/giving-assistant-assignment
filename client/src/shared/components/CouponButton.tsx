@@ -18,13 +18,11 @@ const CouponButton: FC<Props> = ({
   title,
   onClick,
   thumb,
-}) => {
-  return (
-    <CouponButtonContainer>
-      { thumb && <Thumbnail src={ thumb } /> }
-      <Button onClick={ onClick }>{ title }</Button>
-    </CouponButtonContainer>
-  )
-}
+}) => (
+  <CouponButtonContainer>
+    { thumb && <Thumbnail src={ thumb } /> }
+    <Button onClick={ onClick }>{ title }</Button>
+  </CouponButtonContainer>
+);
 
 export default CouponButton;
