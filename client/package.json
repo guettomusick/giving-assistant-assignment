@@ -39,7 +39,9 @@
     ]
   },
   "devDependencies": {
+    "@types/react-test-renderer": "^16.9.3",
     "@types/styled-components": "^5.1.2",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "react-test-renderer": "^16.13.1"
   }
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from './App';
+import CloseButton from './CloseButton';
 
-describe('App', () => {
+describe('Button', () => {
   it('renders', () => {
     const component = renderer.create(
-      <App/>,
+      <CloseButton onClick={ () => {} }/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

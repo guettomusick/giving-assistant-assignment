@@ -1,23 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import useModal from './shared/hooks/useModal';
 import CouponButton from './shared/components/CouponButton';
-import Modal from './shared/components/Modal';
+import SplitModal from './shared/components/SplitModal';
 
-import './App.css';
+import CouponPane from './components/CouponPane';
+import SubscribePane from './components/SubscribePane';
+
+const AppContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 function App() {
-  const { open, handleToggleModal } = useModal();
+  const { open, handleToggleModal } = useModal(true);
 
   return (
-    <div className="App">
+    <AppContainer>
       <CouponButton title='Get Coupon' onClick={ handleToggleModal }/>
-      <Modal
+      <SplitModal
         open={ open }
         onClose={ handleToggleModal }
         onBackdrop={ handleToggleModal }
+        left={ <CouponPane />}
+        right={ <SubscribePane /> }
       />
-    </div>
+    </AppContainer>
   );
 }
 

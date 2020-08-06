@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from './App';
+import Thumbnail from './Thumbnail';
 
-describe('App', () => {
+describe('Thumbnail', () => {
   it('renders', () => {
     const component = renderer.create(
-      <App/>,
+      <Thumbnail src='test.jpg' />,
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from './App';
+import CouponButton from './CouponButton';
 
-describe('App', () => {
+describe('Button', () => {
   it('renders', () => {
     const component = renderer.create(
-      <App/>,
+      <CouponButton title='Button' onClick={ () => {} }/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
