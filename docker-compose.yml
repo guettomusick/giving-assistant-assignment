@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  client:
+    build:
+      context: .
+    restart: unless-stopped
+    env_file: .env
+    ports: 
+      - "3000:80"
+    depends_on:
+      - cms
+
+  cms:
+    image: strapi/strapi
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+    depends_on:
+      - mongo
+    volumes:
+      - ./cms:/srv/app
+    ports:
+      - "1337:1337"
+
+  mongo:
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:
