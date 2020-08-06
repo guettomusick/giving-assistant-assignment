@@ -21,13 +21,13 @@ services:
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
     depends_on:
-      - mongo
+      - mongo-cms
     volumes:
       - ./cms:/srv/app
     ports:
       - "1337:1337"
 
-  mongo:
+  mongo-cms:
     image: mongo
     restart: unless-stopped
     volumes:

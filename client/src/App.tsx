@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import useModal from './shared/hooks/useModal';
+import CouponButton from './shared/components/CouponButton';
+import Modal from './shared/components/Modal';
+
 import './App.css';
 
 function App() {
+  const { open, handleToggleModal } = useModal();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CouponButton title='Get Coupon' onClick={ handleToggleModal }/>
+      <Modal
+        open={ open }
+        onClose={ handleToggleModal }
+        onBackdrop={ handleToggleModal }
+      />
     </div>
   );
 }
