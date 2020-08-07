@@ -49,12 +49,12 @@ docker-compose up
 
 ### Run on test environment (Test Data)
 
-This will start a clena project and boostrap the DB with test data
+This will start a clean project and boostrap the DB with test data
 
 ```
 cd giving-assistant-assignment
 docker-compose up
-docker exec giving-assistant-assignment_mongo-cms_1
+./mongodump.sh
 ```
 
 ### Usage
