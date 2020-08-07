@@ -54,6 +54,10 @@ This will start a clean project and boostrap the DB with test data
 ```
 cd giving-assistant-assignment
 docker-compose up
+```
+
+Adn in another terminal, run
+```
 ./mongodump.sh
 ```
 
@@ -68,3 +72,10 @@ You can get a specific coupon by usign the souponId query param, https://localho
 #### Cms Admin
 
 By getting to http://localhost:1337/admin you can access the admin cms panel, if you bootstrap the project, the default user is `admin@giving.com` and the default password is `Giving2020`.
+
+### Clean the db and start from scratch
+
+```
+docker-compose rm
+docker volume rm giving-assistant-assignment_db
+```
