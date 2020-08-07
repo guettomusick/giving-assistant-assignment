@@ -11,7 +11,7 @@ Although the definitions involve a simple Front end implementation with some sim
 
 The project has a Headless CMS to manage the creation of new coupons, as long as all the content on the app. Every field can be changed including image assets. The same CMS is used to store the subscriptions and validate the email form.
 
-I use Strapi as the headless CMS, it's very powerful out of the box and very flexible.
+I used Strapi as the headless CMS, it's very powerful out of the box and very flexible.
 
 Frontend implementation is made using React, with typescript for typed variables, reducing the probbality of runtime errors.
 

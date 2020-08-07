@@ -28,7 +28,7 @@ export const getCoupons = (): Promise<string[] | null> =>
   .catch(onError);
 
 let couponCmsData: CouponCmsData;
-export const getCouponCms = async (couponId: string): Promise<CouponCmsData | null> => {
+export const getCouponCms = async (couponId: string | null): Promise<CouponCmsData | null> => {
   if (couponCmsData) {
     return couponCmsData;
   }

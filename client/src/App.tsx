@@ -22,13 +22,13 @@ const AppContainer = styled.div`
 
 function App() {
   const { get: getQueryParam } = useQueryParams();
-  const [couponId, setCouponId] = useState<string>(getQueryParam('couponId') || '');
+  const [couponId, setCouponId] = useState<string | null>(getQueryParam('couponId'));
   const { open, handleToggleModal } = useModal(false);
   const couponCmsData = useCmsData(() => getCouponCms(couponId));
 
   useEffect(() => {
     (async () => {
-      if (couponId.length === 0) {
+      if (couponId) {
         try {
           const coupons = await getCoupons();
           if (coupons && coupons.length > 0) {
@@ -39,7 +39,7 @@ function App() {
         };
       }
     })();
-  }, [getQueryParam]);
+  }, [couponId]);
 
   if (!couponCmsData) {
     return <Loading />;
