@@ -12,12 +12,12 @@ export type CouponCmsData = {
   id: string,
   title: string,
   description: string,
-  hero: CmsImage,
+  hero?: CmsImage,
   code: string,
   active: boolean,
   cta: {
     title: string,
-    thumbnail: CmsImage,
+    thumbnail?: CmsImage,
   }
 };
 

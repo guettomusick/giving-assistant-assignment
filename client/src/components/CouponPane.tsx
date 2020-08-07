@@ -34,11 +34,11 @@ const Description = styled.div`
   flex-grow: 1;
 `;
 
-type CouponPaneProps = {
+export type Props = {
   cmsData: CouponCmsData,
 };
 
-const CouponPane: FC<CouponPaneProps> = ({ cmsData }) => {
+const CouponPane: FC<Props> = ({ cmsData }) => {
   const [ref, handleCopy] = useCopyClipboard();
 
   const {
@@ -52,7 +52,7 @@ const CouponPane: FC<CouponPaneProps> = ({ cmsData }) => {
   return (
     <CouponPaneContainer>
       <Header>
-        <HeroImage src={ `http://localhost:3000/api${hero.formats?.medium?.url || hero.url}` }/>
+        { hero && <HeroImage src={ `http://localhost:3000/api${hero.formats?.medium?.url || hero.url}` }/> }
         <Title>{ title }</Title>
       </Header>
       <Description>

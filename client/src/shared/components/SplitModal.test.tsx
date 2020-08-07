@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import SplitModal, { Props } from './SplitModal';
 
-describe('Button', () => {
+describe('SplitModal', () => {
   let props: Props;
 
   beforeEach(() => {

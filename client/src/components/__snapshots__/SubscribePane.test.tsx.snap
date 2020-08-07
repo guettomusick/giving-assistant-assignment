@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubscribePane renders 1`] = `
+<div
+  className="sc-AxgMl iVgSIG"
+>
+  <div
+    className="sc-AxheI fRuFYU"
+  >
+    <div
+      className="sc-Axmtr gxALLi"
+    />
+    <div
+      className="sc-Axmtr gxALLi"
+    />
+  </div>
+</div>
+`;

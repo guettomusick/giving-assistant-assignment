@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button renders 1`] = `
+exports[`CouponButton renders 1`] = `
 <div
-  className="sc-AxiKw ckxydi"
+  className="sc-AxiKw glNTBB"
 >
   <button
-    className="sc-AxjAm dLmywG"
+    className="sc-AxjAm sc-AxhUy fHieOr"
     onClick={[Function]}
   >
     Button

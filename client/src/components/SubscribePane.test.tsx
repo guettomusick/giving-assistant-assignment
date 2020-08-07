@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CouponButton from './CouponButton';
+import SubscribePane from './SubscribePane';
 
-describe('CouponButton', () => {
+describe('SubscribePane', () => {
   it('renders', () => {
     const component = renderer.create(
-      <CouponButton title='Button' onClick={ () => {} }/>
+      <SubscribePane/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Modal, { Props } from './Modal';
 
-describe('Button', () => {
+describe('Modal', () => {
   let props: Props;
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('Button', () => {
 
   it('renders open', () => {
     props.open = true;
-    
+
     const component = renderer.create(
       <Modal { ...props }/>
     );

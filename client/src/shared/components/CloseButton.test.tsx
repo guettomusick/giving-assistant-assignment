@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import CloseButton from './CloseButton';
 
-describe('Button', () => {
+describe('CloseButton', () => {
   it('renders', () => {
     const component = renderer.create(
       <CloseButton onClick={ () => {} }/>

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CouponPane renders 1`] = `
+<div
+  className="sc-AxgMl goCjCL"
+>
+  <div
+    className="sc-AxheI fGpwZQ"
+  >
+    <h1
+      className="sc-AxmLO YikNX"
+    >
+      Coupon
+    </h1>
+  </div>
+  <div
+    className="sc-fzozJi BUFJz"
+  >
+    <p>
+      A Coupon
+    </p>
+  </div>
+  <div
+    className="sc-AxirZ eaZSdP"
+  >
+    <input
+      className="sc-AxiKw lbWWnB"
+      disabled={true}
+      name="code"
+      onChange={[Function]}
+      value="CODE"
+    />
+    <button
+      className="sc-AxjAm sc-AxhCb gLFHnk"
+      onClick={[Function]}
+    >
+      Copy
+    </button>
+  </div>
+</div>
+`;
