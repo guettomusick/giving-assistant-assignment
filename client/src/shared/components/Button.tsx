@@ -7,12 +7,15 @@ const Button = styled.button`
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
   outline : none;
 
-  &:hover {
-    background-color: #0890EB;
-  }
+  ${props => !props.disabled && `
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0890EB;
+    }
+  `};
 `;
 
 export default Button;

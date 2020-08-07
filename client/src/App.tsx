@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      if (couponId) {
+      if (!couponId) {
         try {
           const coupons = await getCoupons();
           if (coupons && coupons.length > 0) {

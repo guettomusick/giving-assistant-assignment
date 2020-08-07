@@ -52,7 +52,7 @@ const CouponPane: FC<Props> = ({ cmsData }) => {
   return (
     <CouponPaneContainer>
       <Header>
-        { hero && <HeroImage src={ `http://localhost:3000/api${hero.formats?.medium?.url || hero.url}` }/> }
+        { hero && <HeroImage src={ `/api${hero.formats?.medium?.url || hero.url}` }/> }
         <Title>{ title }</Title>
       </Header>
       <Description>

@@ -42,7 +42,7 @@ const CouponButton: FC<Props> = ({
   <CouponButtonContainer>
     { thumbnail && (
       <StyledThumbnail
-        src={ `http://localhost:3000/api${thumbnail.formats?.medium?.url || thumbnail.url}` } 
+        src={ `/api${thumbnail.formats?.medium?.url || thumbnail.url}` } 
         onClick={ onClick }
       />
     )}

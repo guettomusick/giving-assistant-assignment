@@ -19,6 +19,8 @@ I didn't use a CSS Framework, Although using bootstrap or material-ui would make
 
 The entire project is ready to run usign docker and docker-compose. Environment variables are present on the repo for simplicity, although this is a bad practice and shouldn't be done.
 
+Because of the use of strapi as our subscribe endpoint, throtle is implemented on frontend, probably a better solution will be to protect on the backed, because frontend is very easy to bypass.
+
 ### Design
 The design can be found on Figma, https://www.figma.com/file/yPg0L3VBq1bLYchTLBy28B/Giving-Assistant-Assignment?node-id=1%3A9.
 
@@ -52,7 +54,7 @@ This will start a clena project and boostrap the DB with test data
 ```
 cd giving-assistant-assignment
 docker-compose up
-docker exec 
+docker exec giving-assistant-assignment_mongo-cms_1
 ```
 
 ### Usage
