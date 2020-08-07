@@ -67,7 +67,7 @@ On you browser, navigte to https://localhost:3000, that will open the project an
 
 #### Get a specific coupon
 
-You can get a specific coupon by usign the souponId query param, https://localhost:3000?couponId=<coupon-id>
+You can get a specific coupon by usign the souponId query param, https://localhost:3000?couponId=coupon-id
 
 #### Cms Admin
 
