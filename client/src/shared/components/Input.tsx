@@ -4,11 +4,19 @@ import styled from 'styled-components';
 import Button from './Button';
 import { ChangeEvent } from '../hooks/useHandleChange';
 
-const InputContainer = styled.div`
+type InputContainerProps = {
+  hasTextMuted: boolean,
+};
+
+const InputContainer = styled.div<InputContainerProps>`
   position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
+
+  ${ props => (props.hasTextMuted && `
+    padding-bottom: 20px;
+  `)};
 `;
 
 type StyledInputProps = {
@@ -36,7 +44,13 @@ const StyledButton = styled(Button)`
 `;
 
 const TextMuted = styled.div`
-
+  position: absolute;
+  top: 42px;
+  font-size: 0.65em;
+  /* text-overflow: revert; */
+  color: red;
+  width: 100%;
+  text-align: center;
 `;
 
 export type Props = {
@@ -66,6 +80,7 @@ const Input: FC<Props> = ({
 }) => {
   const [dirty, setDirty] = useState<boolean>(value.length > 0);
   const hasButton = onClick !== undefined && cta !== undefined;
+  const hasTextMuted = !!textMuted;
 
   const handleChange = (event: ChangeEvent) => {
     setDirty(true);
@@ -73,7 +88,7 @@ const Input: FC<Props> = ({
   };
 
   return (
-    <InputContainer className={ className }>
+    <InputContainer className={ className } hasTextMuted={ hasTextMuted }>
       <StyledInput
         name={ name }
         hasButton={ hasButton }

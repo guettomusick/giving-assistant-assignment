@@ -1,8 +1,8 @@
 {
-  "kind": "collectionType",
-  "collectionName": "coupons",
+  "kind": "singleType",
+  "collectionName": "subscriptions",
   "info": {
-    "name": "Coupon"
+    "name": "Subscription"
   },
   "options": {
     "increments": true,
@@ -26,18 +26,21 @@
       "plugin": "upload",
       "required": false
     },
-    "code": {
+    "buttonTitle": {
       "type": "string",
       "required": true
     },
-    "active": {
-      "type": "boolean",
-      "default": true
+    "errorMessage": {
+      "type": "string",
+      "required": true
     },
-    "cta": {
-      "type": "component",
-      "repeatable": false,
-      "component": "button.cta",
+    "successImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
       "required": true
     }
   }

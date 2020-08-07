@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import Modal, { Props as ModalProps } from './Modal';
 
-const StyledModal = styled(Modal)`
+const SplitPlaneContainer = styled.div`
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  height: 100%;
 
   @media(max-width: 640px) {
     flex-direction: column;
@@ -15,10 +15,13 @@ const StyledModal = styled(Modal)`
 `;
 
 const SplitPane = styled.div`
+  position: relative;
   flex-grow: 1;
   width: 50%;
+  overflow: auto;
   @media(max-width: 640px) {
     width: 100%;
+    overflow: initial;
   }
 `;
 
@@ -40,10 +43,12 @@ const SplitModal: FC<Props> = ({
   right,
   ...props
 }) => (
-  <StyledModal { ...props }>
-    <LeftSplitPane>{ left }</LeftSplitPane>
-    <RightSplitPane>{ right }</RightSplitPane>
-  </StyledModal>
+  <Modal { ...props }>
+    <SplitPlaneContainer>
+      <LeftSplitPane>{ left }</LeftSplitPane>
+      <RightSplitPane>{ right }</RightSplitPane>
+    </SplitPlaneContainer>
+  </Modal>
 );
 
 export default SplitModal;

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/subscription",
+      "handler": "subscription.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/subscription",
+      "handler": "subscription.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscription",
+      "handler": "subscription.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

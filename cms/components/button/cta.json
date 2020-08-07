@@ -6,11 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Thumbnail": {
+    "thumbnail": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

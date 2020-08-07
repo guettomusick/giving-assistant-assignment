@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders with button 1`] = `
+<div
+  className="sc-AxirZ ftCkFX"
+>
+  <input
+    className="sc-AxiKw lbWWnB"
+    name="Some Input"
+    onChange={[Function]}
+    value="Some Valu"
+  />
+  <button
+    className="sc-AxjAm sc-AxhCb gLFHnk"
+    onClick={[Function]}
+  >
+    CTA
+  </button>
+</div>
+`;
+
+exports[`Input renders without button 1`] = `
+<div
+  className="sc-AxirZ ftCkFX"
+>
+  <input
+    className="sc-AxiKw bTBEhB"
+    name="Some Input"
+    onChange={[Function]}
+    value="Some Valu"
+  />
+</div>
+`;
