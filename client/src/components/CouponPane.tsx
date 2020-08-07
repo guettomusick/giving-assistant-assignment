@@ -14,16 +14,20 @@ const CouponPaneContainer = styled.div`
 `;
 
 const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   text-align: center;
   margin-bottom: 20px;
 `;
 
 const HeroImage = styled.img`
-
+  width: 30%;
 `;
 
 const Title = styled.h1`
   margin: 0;
+  flex-grow: 1;
 `;
 
 const Description = styled.div`

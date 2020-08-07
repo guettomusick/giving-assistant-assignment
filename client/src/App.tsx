@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import useModal from './shared/hooks/useModal';
@@ -9,7 +9,8 @@ import CouponPane from './components/CouponPane';
 import SubscribePane from './components/SubscribePane';
 import Loading from './shared/components/Loading';
 import useCmsData from './shared/hooks/useCmsData';
-import { getCouponCms } from './services/coupon';
+import { getCouponCms, getCoupons } from './services/coupon';
+import useQueryParams from './shared/hooks/useQueryParams';
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -20,9 +21,25 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const couponId = '5f2cb0d87d3dae00fc70c1a2';
-  const { open, handleToggleModal } = useModal(true);
+  const { get: getQueryParam } = useQueryParams();
+  const [couponId, setCouponId] = useState<string>(getQueryParam('couponId') || '');
+  const { open, handleToggleModal } = useModal(false);
   const couponCmsData = useCmsData(() => getCouponCms(couponId));
+
+  useEffect(() => {
+    (async () => {
+      if (couponId.length === 0) {
+        try {
+          const coupons = await getCoupons();
+          if (coupons && coupons.length > 0) {
+            setCouponId(coupons[Math.floor(Math.random() * coupons.length)]);
+          }
+        } catch(error) {
+          setCouponId('5f2cb0d87d3dae00fc70c1a2');
+        };
+      }
+    })();
+  }, [getQueryParam]);
 
   if (!couponCmsData) {
     return <Loading />;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const ldsRipple = keyframes`
