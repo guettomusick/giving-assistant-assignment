@@ -65,6 +65,8 @@ Adn in another terminal, run
 
 On you browser, navigte to https://localhost:3000, that will open the project and choose a random coupon from the ones present on the CMS.
 
+If you choose the clean project, you must first go to http://localhost:1337/admin, create and admin user, and add some coupons and add subscription section details. I encourage you to use test data first, and then drop the db and start over if you want.
+
 #### Get a specific coupon
 
 You can get a specific coupon by usign the souponId query param, https://localhost:3000?couponId=5f2cb0d87d3dae00fc70c1a2
