@@ -7,6 +7,9 @@ import SplitModal from './shared/components/SplitModal';
 
 import CouponPane from './components/CouponPane';
 import SubscribePane from './components/SubscribePane';
+import Loading from './shared/components/Loading';
+import useCmsData from './shared/hooks/useCmsData';
+import { getCouponCms } from './services/coupon';
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -17,16 +20,33 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+  const couponId = '5f2cb0d87d3dae00fc70c1a2';
   const { open, handleToggleModal } = useModal(true);
+  const couponCmsData = useCmsData(() => getCouponCms(couponId));
+
+  if (!couponCmsData) {
+    return <Loading />;
+  }
+
+  const {
+    cta: {
+      title,
+      thumbnail,
+    },
+  } = couponCmsData;
 
   return (
     <AppContainer>
-      <CouponButton title='Get Coupon' onClick={ handleToggleModal }/>
+      <CouponButton
+        title={ title }
+        thumbnail={ thumbnail }
+        onClick={ handleToggleModal }
+      />
       <SplitModal
         open={ open }
         onClose={ handleToggleModal }
         onBackdrop={ handleToggleModal }
-        left={ <CouponPane />}
+        left={ <CouponPane cmsData={ couponCmsData }/>}
         right={ <SubscribePane /> }
       />
     </AppContainer>

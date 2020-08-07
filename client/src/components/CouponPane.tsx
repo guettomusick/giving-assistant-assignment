@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 
 import Input from '../shared/components/Input';
 import useCopyClipboard from '../shared/hooks/useCopyClipboard';
+import { CouponCmsData } from '../services/coupon';
 
 const CouponPaneContainer = styled.div`
   display: flex;
@@ -28,19 +30,30 @@ const Description = styled.div`
   flex-grow: 1;
 `;
 
-const CouponPane = () => {
+type CouponPaneProps = {
+  cmsData: CouponCmsData,
+};
+
+const CouponPane: FC<CouponPaneProps> = ({ cmsData }) => {
   const [ref, handleCopy] = useCopyClipboard();
-  const title = 'A title';
-  const description = { __html: 'A description' };
-  const code = 'TEST0001';
+
+  const {
+    hero,
+    title,
+    description,
+    code,
+  } = cmsData;
+
 
   return (
     <CouponPaneContainer>
       <Header>
-        <HeroImage />
+        <HeroImage src={ `http://localhost:3000/api${hero.formats?.medium?.url || hero.url}` }/>
         <Title>{ title }</Title>
       </Header>
-      <Description dangerouslySetInnerHTML={ description } />
+      <Description>
+        <ReactMarkdown source={ description } />
+      </Description>
       <Input
         inputRef={ ref }
         name='code'
